@@ -1,19 +1,20 @@
-export interface Channel {
-  id: string;
+export interface FarcasterChannel {
+  channelId: string;
   name: string;
   description: string;
   imageUrl: string;
-  createdAt: string;
+  createdAtTimestamp: string;
   followerCount: number;
-  castCount: number;
+  participantsCount: number;
+  castsCount: number;
 }
 
-export interface Cast {
+export interface FarcasterCast {
   hash: string;
   threadHash: string;
   parentHash: string | null;
   author: {
-    fid: number;
+    fid: string;
     username: string;
     displayName: string;
     pfp: {
@@ -29,16 +30,15 @@ export interface Cast {
   replies: {
     count: number;
   };
-  mentions: string[];
-  embeds: unknown[];
 }
 
 export interface ChannelAnalytics {
-  channel: Channel;
-  newFollowers: { date: string; count: number }[];
+  channel: FarcasterChannel;
   castsPerDay: { date: string; count: number }[];
   engagementRate: number;
   topContributors: { username: string; castCount: number }[];
-  topCasts: Cast[];
+  topCasts: FarcasterCast[];
   contentTypeDistribution: { type: string; percentage: number }[];
+  mostActiveHours: { hour: number; count: number }[];
+  growthTrend: { date: string; followerCount: number }[];
 }

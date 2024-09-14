@@ -87,3 +87,37 @@ h6 {
 code {
   font-family: "Fira Code", monospace;
 }
+
+.channel-analytics {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.analytics-card {
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-card h2 {
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.analytics-card ul {
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+.analytics-card li {
+  margin-bottom: 10px;
+}

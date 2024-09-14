@@ -16,6 +16,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import useClickOutside from "@/hooks/useClickOutside";
 import { useUIStore } from "@/components/providers/storesProvider";
 import LoginForm from "@/components/forms/loginForm";
+import { ThemeToggle } from "@/components/ui/themeToggle";
 
 const navItems = [
   { name: "Analytics", href: "#analytics", icon: ChartBarIcon },
@@ -133,6 +134,7 @@ export default function Header() {
             ))}
           </div>
           <div className="hidden lg:flex items-center space-x-4">
+            <ThemeToggle />
             <Button
               variant="secondary"
               className="transition-transform hover:scale-105"
@@ -209,13 +211,16 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button
-                variant="ghost"
-                className="w-full mb-2 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
-                onClick={handleOpenLoginModal}
-              >
-                Log In
-              </Button>
+              <div className="flex items-center justify-between">
+                <ThemeToggle />
+                <Button
+                  variant="ghost"
+                  className="w-full mb-2 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  onClick={handleOpenLoginModal}
+                >
+                  Log In
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

@@ -16,6 +16,5 @@ export const FarcasterProvider = ({
       "http://localhost:3000/api/login",
   };
 
-  console.log(config);
   return <AuthKitProvider config={config}>{children}</AuthKitProvider>;
 };

@@ -9,6 +9,7 @@ async function neynarFetch(endpoint: string, options: RequestInit = {}) {
   const url = `${NEYNAR_API_URL}${endpoint}`;
   const response = await fetch(url, {
     ...options,
+
     headers: {
       ...options.headers,
       //   api_key: NEYNAR_API_KEY,

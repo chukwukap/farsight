@@ -1,0 +1,320 @@
+{
+  "id": "663610a4b0c020aaaaa0bd8d",
+  "dappName": "farcaster",
+  "dappSlug": "farcaster_v3_optimism",
+  "channelId": "base-builds",
+  "name": "base-builds",
+  "url": "https://warpcast.com/~/channel/base-builds",
+  "description": "Base is for builders, and this is a channel to talk about what you’re building on Base.",
+  "imageUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/0761a000-1cf4-4b6c-acda-30cc24c01600/original",
+  "leadIds": [
+    "12142"
+  ],
+  "leadProfiles": [
+    {
+      "id": "28726d9b6a4481b200ce4aabf453ea4ec70cceac353856eccd8a3df23377b978",
+      "profileName": "base",
+      "profileBio": "base.org",
+      "profileDisplayName": "Base",
+      "profileImage": "https://i.imgur.com/7Q0QBrm.jpg",
+      "profileUrl": "",
+      "twitterUserName": "",
+      "website": "",
+      "location": "",
+      "farcasterScore": {
+        "farScore": 128.76740877585
+      }
+    }
+  ],
+  "moderatorIds": [
+    "368422"
+  ],
+  "moderatorProfiles": [
+    {
+      "id": "0a87f73508858dce1d6254d93eeb028b97d43256f4458cb75f98814419a57065",
+      "profileName": "automod",
+      "profileBio": "automod.sh — power tools for your channel. Setup in < 2min.",
+      "profileDisplayName": "automod",
+      "profileImage": "https://i.imgur.com/K1SLPRA.jpg",
+      "profileUrl": "",
+      "twitterUserName": "",
+      "website": "",
+      "location": "",
+      "farcasterScore": {
+        "farScore": 0.82752449505
+      }
+    }
+  ],
+  "isModerationEnabled": true,
+  "createdAtTimestamp": "2024-04-25T14:35:39Z",
+  "followerCount": 25552,
+  "participants": [
+    {
+      "id": "66362301882148312a1669a7",
+      "participantId": "1265",
+      "lastActionTimestamp": "2024-08-25T17:26:54Z",
+      "lastRepliedTimestamp": "2024-08-25T17:26:54Z",
+      "lastCastedTimestamp": "2024-08-05T10:19:25Z",
+      "lastFollowedTimestamp": "2024-04-27T19:59:24Z",
+      "channelActions": [
+        "cast",
+        "follow",
+        "reply"
+      ],
+      "participant": {
+        "id": "7103161c0cf89e51e47ac34d0da692a2912cbe98b71242f371d98d483422b6e6",
+        "profileName": "akhil-bvs",
+        "profileBio": "sherpa /fbi",
+        "profileDisplayName": "Akhil",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/6f618f59-2290-4350-100a-4b5d10abef00/original",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 0.2896917339
+        }
+      }
+    },
+    {
+      "id": "66362447b11bd6241e95234e",
+      "participantId": "2391",
+      "lastActionTimestamp": "2024-08-31T23:19:34Z",
+      "lastRepliedTimestamp": null,
+      "lastCastedTimestamp": "2024-08-31T23:19:34Z",
+      "lastFollowedTimestamp": "2024-04-26T16:12:27Z",
+      "channelActions": [
+        "cast",
+        "follow"
+      ],
+      "participant": {
+        "id": "146e263fa0ac877e25926d2a23e20db4dd13090d2b761bd47f3532be22e0204c",
+        "profileName": "ramitphi",
+        "profileBio": "\n\nFounding Member /farhouse /huddle01",
+        "profileDisplayName": "Ramit Agarwal (🎩,🎙️)",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/c6e0fc70-66f3-4fc4-3aa4-9afa2a2d7700/rectcrop3",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 27.83649973064
+        }
+      }
+    },
+    {
+      "id": "6636245b882148312a16ebd5",
+      "participantId": "2201",
+      "lastActionTimestamp": "2024-06-16T20:35:19Z",
+      "lastRepliedTimestamp": null,
+      "lastCastedTimestamp": "2024-06-16T20:35:19Z",
+      "lastFollowedTimestamp": "2024-04-28T20:10:38Z",
+      "channelActions": [
+        "cast",
+        "follow"
+      ],
+      "participant": {
+        "id": "dd15d18a6226af9e1ab571e585735414ef661984b4da6e3e5693697312a1df0e",
+        "profileName": "carlos",
+        "profileBio": "crafting farcaster.in & farterminal.io +++",
+        "profileDisplayName": "Carlos",
+        "profileImage": "https://i.imgur.com/dwDm3cP.jpg",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 2.6226374289300005
+        }
+      }
+    },
+    {
+      "id": "663624bcb11bd6241e953b8f",
+      "participantId": "767",
+      "lastActionTimestamp": "2024-09-13T17:11:24Z",
+      "lastRepliedTimestamp": "2024-09-13T17:11:24Z",
+      "lastCastedTimestamp": "2024-09-13T16:13:14Z",
+      "lastFollowedTimestamp": "2024-04-25T15:23:05Z",
+      "channelActions": [
+        "cast",
+        "reply",
+        "follow"
+      ],
+      "participant": {
+        "id": "4be617b6dc96c2f7f5b516a0ebe191f2cda9d961edcadd0ccd68d017e5edbbfe",
+        "profileName": "kabir",
+        "profileBio": "strat, ops, grants on the @base team ",
+        "profileDisplayName": "Kabir 🔵",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/a27dd4c6-6631-44f2-9944-ad0e70b17400/rectcrop3",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 0.51929404356
+        }
+      }
+    },
+    {
+      "id": "663624c586643eac3bc32618",
+      "participantId": "2433",
+      "lastActionTimestamp": "2024-09-14T21:40:26Z",
+      "lastRepliedTimestamp": "2024-09-14T21:40:26Z",
+      "lastCastedTimestamp": "2024-09-13T18:18:41Z",
+      "lastFollowedTimestamp": "2024-04-25T14:35:39Z",
+      "channelActions": [
+        "cast",
+        "reply",
+        "follow"
+      ],
+      "participant": {
+        "id": "9594f41f26fb8ecd63e64fd1c7d2951c8b9929a3d233466f112c37e02a4ce1ba",
+        "profileName": "seneca",
+        "profileBio": "working on /nouns & /rounds",
+        "profileDisplayName": "seneca",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/0e928611-bfd8-4439-81e3-cbea2cd32000/original",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 386.66567629194
+        }
+      }
+    },
+    {
+      "id": "66362517882148312a170831",
+      "participantId": "210648",
+      "lastActionTimestamp": "2024-09-09T01:51:11Z",
+      "lastRepliedTimestamp": "2024-09-09T01:51:11Z",
+      "lastCastedTimestamp": "2024-09-09T00:03:07Z",
+      "lastFollowedTimestamp": "2024-04-27T18:08:12Z",
+      "channelActions": [
+        "cast",
+        "reply",
+        "follow"
+      ],
+      "participant": {
+        "id": "5f816057398108381afaaaf8a57bd4fdf75c98c1c1ac511225eb430180fdbb64",
+        "profileName": "sweetman.eth",
+        "profileBio": "✧the dev for onchain music\n✧✧✧✧✧✧✧",
+        "profileDisplayName": "sweetman",
+        "profileImage": "https://i.imgur.com/KX2nQMz.png",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 0.24313218876
+        }
+      }
+    },
+    {
+      "id": "663625229c8bf3c35591915c",
+      "participantId": "1068",
+      "lastActionTimestamp": "2024-09-10T23:21:56Z",
+      "lastRepliedTimestamp": "2024-09-10T23:21:56Z",
+      "lastCastedTimestamp": "2024-09-06T19:24:32Z",
+      "lastFollowedTimestamp": "2024-04-26T16:16:25Z",
+      "channelActions": [
+        "cast",
+        "reply",
+        "follow"
+      ],
+      "participant": {
+        "id": "48ec185e8f855c5d5520134fac5aaa9af8a0bf1a08baa432ab325d1bd39eef63",
+        "profileName": "pentacle",
+        "profileBio": "⭐ /pentacle ✵ /ephemeris \n\nwelcomeonchain.xyz",
+        "profileDisplayName": "pentacle",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/7bf93ea6-db04-4ac3-3373-4795beb01b00/original",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 1.200123600125
+        }
+      }
+    },
+    {
+      "id": "6636252fc8167dd84062bf24",
+      "participantId": "211246",
+      "lastActionTimestamp": "2024-09-01T22:30:36Z",
+      "lastRepliedTimestamp": "2024-09-01T22:30:36Z",
+      "lastCastedTimestamp": "2024-08-28T15:45:00Z",
+      "lastFollowedTimestamp": "2024-04-27T21:39:53Z",
+      "channelActions": [
+        "cast",
+        "follow",
+        "reply"
+      ],
+      "participant": {
+        "id": "728a7736e1afed9d185f611916cfd0652bf1b15938fa8e312c1a47a310c35c19",
+        "profileName": "filter8",
+        "profileBio": "Pixel 💜 | Artist | On-chain advocate filter8.xyz | filter8_tez.twitter I /filter8 | Building /8pepen",
+        "profileDisplayName": "FILTER8 ☀️🍖$F8",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/078be171-69ba-4317-21c2-fd711037fa00/rectcrop3",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 0.098304049125
+        }
+      }
+    },
+    {
+      "id": "6636253c5b1185e03daa34fa",
+      "participantId": "213117",
+      "lastActionTimestamp": "2024-04-28T21:11:43Z",
+      "lastRepliedTimestamp": null,
+      "lastCastedTimestamp": "2024-04-28T21:11:43Z",
+      "lastFollowedTimestamp": "2024-04-28T16:58:09Z",
+      "channelActions": [
+        "cast",
+        "follow"
+      ],
+      "participant": {
+        "id": "144a514e524ef194d596531a661b37367f6430b4ef9a36991a109e3e01e83828",
+        "profileName": "ayay",
+        "profileBio": "",
+        "profileDisplayName": "ay",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/a9cddee6-f27b-422a-a6a6-c41375c41f00/rectcrop3",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 0.00000186588
+        }
+      }
+    },
+    {
+      "id": "66362548b11bd6241e9560a5",
+      "participantId": "213310",
+      "lastActionTimestamp": "2024-09-10T17:27:12Z",
+      "lastRepliedTimestamp": "2024-09-10T17:27:12Z",
+      "lastCastedTimestamp": "2024-09-08T21:17:00Z",
+      "lastFollowedTimestamp": "2024-04-26T16:19:18Z",
+      "channelActions": [
+        "cast",
+        "reply",
+        "follow"
+      ],
+      "participant": {
+        "id": "6fb8636f8e4a1093f40b9f433df8c9e758cd36b73aa5f4e473c8def001d705ed",
+        "profileName": "schmrdty.eth",
+        "profileBio": "Degentleman|Family Man|Artist|Building @degenduckynft Edutainment & $shenanigans token |🔴🔵🎩🌳🐘💜🍡|",
+        "profileDisplayName": "SchmRdty.eth 🎩Ⓜ️🫂",
+        "profileImage": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/017bbae1-6f2f-4483-e5c8-3f407fbdfa00/rectcrop3",
+        "profileUrl": "",
+        "twitterUserName": "",
+        "website": "",
+        "location": "",
+        "farcasterScore": {
+          "farScore": 1.46741619127
+        }
+      }
+    }
+  ]
+}
