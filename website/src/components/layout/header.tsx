@@ -7,7 +7,7 @@ import {
   ChartBarIcon,
   UserGroupIcon,
   GlobeAltIcon,
-  CubeTransparentIcon,
+  // CubeTransparentIcon,
   SunIcon,
   MoonIcon,
   MagnifyingGlassIcon,
@@ -52,7 +52,7 @@ const navItems = [
       { name: "Developer Resources", href: "/ecosystem/developers" },
     ],
   },
-  { name: "Pricing", href: "/#pricing", icon: CubeTransparentIcon },
+  // { name: "Pricing", href: "/#pricing", icon: CubeTransparentIcon },
 ];
 
 export default function Header() {
