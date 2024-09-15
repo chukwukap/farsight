@@ -1,20 +1,27 @@
 import { createStore } from "zustand/vanilla";
 import React from "react";
 
+interface ModalProps {
+  onClose: () => void;
+  [key: string]: unknown;
+}
+
 interface ModalConfig {
-  component: React.ComponentType<unknown>;
-  props?: Record<string, unknown>;
+  component: React.ComponentType<ModalProps>;
+  props?: Omit<ModalProps, "onClose">;
 }
 
 interface UIState {
   isSidebarOpen: boolean;
   activeModal: ModalConfig | null;
+  isLoading: boolean;
 }
 
 interface UIActions {
   toggleSidebar: () => void;
   openModal: (config: ModalConfig) => void;
   closeModal: () => void;
+  setLoading: (isLoading: boolean) => void;
 }
 
 export type UIStore = UIState & UIActions;
@@ -22,6 +29,7 @@ export type UIStore = UIState & UIActions;
 export const initialState: UIState = {
   isSidebarOpen: true,
   activeModal: null,
+  isLoading: false,
 };
 
 export const createUiStore = (initState: UIState = initialState) => {
@@ -31,5 +39,6 @@ export const createUiStore = (initState: UIState = initialState) => {
       set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
     openModal: (config: ModalConfig) => set({ activeModal: config }),
     closeModal: () => set({ activeModal: null }),
+    setLoading: (isLoading: boolean) => set({ isLoading }),
   }));
 };

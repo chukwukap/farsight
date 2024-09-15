@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  ChartBarIcon,
-  UserGroupIcon,
-  GlobeAltIcon,
-} from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
+// import {
+//   ChartBarIcon,
+//   UserGroupIcon,
+//   GlobeAltIcon,
+// } from "@heroicons/react/24/outline";
+// import { useEffect, useState } from "react";
 import { useUIStore } from "@/components/providers/storesProvider";
 import LoginForm from "@/components/forms/loginForm";
 
@@ -62,68 +62,68 @@ export default function Hero() {
             size="lg"
             variant="outline"
             disabled
-            className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/20 dark:text-foreground dark:border-foreground dark:hover:bg-foreground/20"
+            className="text-accent-foreground border-primary-foreground hover:bg-primary-foreground/20 dark:text-foreground dark:border-foreground dark:hover:bg-foreground/20"
           >
             Watch Demo
           </Button>
         </motion.div>
-        <Stats />
+        {/* <Stats /> */}
       </div>
     </section>
   );
 }
 
-function Stats() {
-  const [stats, setStats] = useState({
-    users: 0,
-    insights: 0,
-    dataPoints: 0,
-  });
+// function Stats() {
+//   const [stats, setStats] = useState({
+//     users: 0,
+//     insights: 0,
+//     dataPoints: 0,
+//   });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStats((prevStats) => ({
-        users: Math.min(prevStats.users + 17, 10000),
-        insights: Math.min(prevStats.insights + 89, 500000),
-        dataPoints: Math.min(prevStats.dataPoints + 1234, 10000000),
-      }));
-    }, 50);
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setStats((prevStats) => ({
+//         users: Math.min(prevStats.users + 17, 10000),
+//         insights: Math.min(prevStats.insights + 89, 500000),
+//         dataPoints: Math.min(prevStats.dataPoints + 1234, 10000000),
+//       }));
+//     }, 50);
 
-    return () => clearInterval(interval);
-  }, []);
+//     return () => clearInterval(interval);
+//   }, []);
 
-  return (
-    <motion.div
-      className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.6 }}
-    >
-      {[
-        {
-          icon: UserGroupIcon,
-          label: "Active Users",
-          value: stats.users.toLocaleString(),
-        },
-        {
-          icon: ChartBarIcon,
-          label: "Insights Generated",
-          value: stats.insights.toLocaleString(),
-        },
-        {
-          icon: GlobeAltIcon,
-          label: "Data Points Analyzed",
-          value: stats.dataPoints.toLocaleString(),
-        },
-      ].map((stat, index) => (
-        <div key={index} className="flex flex-col items-center">
-          <stat.icon className="w-12 h-12 mb-4 text-accent dark:text-accent-foreground" />
-          <h3 className="text-4xl font-bold mb-2">{stat.value}</h3>
-          <p className="text-lg text-primary-foreground/80 dark:text-foreground/80">
-            {stat.label}
-          </p>
-        </div>
-      ))}
-    </motion.div>
-  );
-}
+//   return (
+//     <motion.div
+//       className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+//       initial={{ opacity: 0, y: 20 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.8, delay: 0.6 }}
+//     >
+//       {[
+//         {
+//           icon: UserGroupIcon,
+//           label: "Active Users",
+//           value: stats.users.toLocaleString(),
+//         },
+//         {
+//           icon: ChartBarIcon,
+//           label: "Insights Generated",
+//           value: stats.insights.toLocaleString(),
+//         },
+//         {
+//           icon: GlobeAltIcon,
+//           label: "Data Points Analyzed",
+//           value: stats.dataPoints.toLocaleString(),
+//         },
+//       ].map((stat, index) => (
+//         <div key={index} className="flex flex-col items-center">
+//           <stat.icon className="w-12 h-12 mb-4 text-accent dark:text-accent-foreground" />
+//           <h3 className="text-4xl font-bold mb-2">{stat.value}</h3>
+//           <p className="text-lg text-primary-foreground/80 dark:text-foreground/80">
+//             {stat.label}
+//           </p>
+//         </div>
+//       ))}
+//     </motion.div>
+//   );
+// }

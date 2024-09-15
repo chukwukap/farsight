@@ -1,47 +1,51 @@
-"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { FarcasterIcon } from "@/components/ui/icons";
 import { SignInButton } from "@farcaster/auth-kit";
+import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 
-export default function LoginForm() {
-  const [isLoading, setIsLoading] = useState(false);
+interface SignInModalProps {
+  onClose: () => void;
+}
 
-  const handleFarcasterSignIn = async () => {
-    console.log("Signing in with Farcaster. I'm being called");
-    setIsLoading(true);
-
-    setIsLoading(false);
-  };
+const SignInModal: React.FC<SignInModalProps> = ({ onClose }) => {
+  const [error, setError] = useState<string | null>(null);
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-8 p-8 bg-background rounded-lg border-2 border-gray-100">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-primary">Welcome to FarSight</h2>
-        <p className="text-muted-foreground mt-2">
-          Sign in to access your account
-        </p>
-      </div>
+    <div className="w-full max-w-md mx-auto">
+      <h2 className="text-3xl font-bold text-center mb-6">
+        Welcome to FarSight
+      </h2>
+      <p className="text-center text-muted-foreground mb-8">
+        Sign in to access advanced analytics and insights for your Farcaster
+        channels.
+      </p>
 
-      <div className="space-y-4">
-        <Button
-          variant="outline"
-          className="w-full h-12 text-lg font-medium"
-          onClick={handleFarcasterSignIn}
-          disabled={isLoading}
-        >
-          <FarcasterIcon className="mr-2 h-5 w-5" />
-          Sign in with Farcaster
-        </Button>
+      <div className="space-y-4 flex flex-col items-center">
         <SignInButton
-          onSuccess={({ fid, username }) =>
-            console.log(`Hello, ${username}! Your fid is ${fid}.`)
-          }
-        />
+          onSuccess={({ fid, username }) => {
+            console.log(`Signed in: ${username} (${fid})`);
+            onClose();
+          }}
+          onError={(error) => {
+            console.error("Error signing in:", error);
+            setError("An error occurred during sign-in. Please try again.");
+          }}
+        ></SignInButton>
       </div>
 
-      <p className="text-center text-sm text-muted-foreground">
+      {error && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-4 p-3 bg-red-100 border border-red-300 rounded-md flex items-center text-red-800"
+        >
+          <ExclamationCircleIcon className="h-5 w-5 mr-2 flex-shrink-0" />
+          <p className="text-sm">{error}</p>
+        </motion.div>
+      )}
+
+      <p className="text-center text-sm text-muted-foreground mt-8">
         By signing in, you agree to our{" "}
         <a href="#" className="font-medium text-primary hover:underline">
           Terms of Service
@@ -54,4 +58,6 @@ export default function LoginForm() {
       </p>
     </div>
   );
-}
+};
+
+export default SignInModal;

@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useUIStore } from "@/components/providers/storesProvider";
@@ -172,13 +171,10 @@ const ChannelIdPageClient: React.FC<{ channelId: string }> = ({
         />
         <StatCard
           title="Total Casts"
-          value={analytics.castsPerDay.reduce(
-            (sum, day) => sum + day?.count,
-            0
-          )}
+          value={analytics.castsPerDay.reduce((sum, day) => sum + day.count, 0)}
           change={
-            analytics.castsPerDay[analytics.castsPerDay.length - 1]?.count -
-            analytics.castsPerDay[0]?.count
+            analytics.castsPerDay[analytics.castsPerDay.length - 1].count -
+            analytics.castsPerDay[0].count
           }
           icon={<MessageSquareIcon />}
         />
@@ -236,7 +232,7 @@ const ChannelIdPageClient: React.FC<{ channelId: string }> = ({
                         0
                       ),
                       analytics.topCasts.reduce(
-                        (sum, cast) => sum + cast.replies?.count,
+                        (sum, cast) => sum + cast.replies.count,
                         0
                       ),
                       analytics.topCasts.reduce(
@@ -299,9 +295,7 @@ const ChannelIdPageClient: React.FC<{ channelId: string }> = ({
                   series={[
                     {
                       name: "Casts",
-                      data: analytics.mostActiveHours.map(
-                        (hour) => hour?.count
-                      ),
+                      data: analytics.mostActiveHours.map((hour) => hour.count),
                     },
                   ]}
                   type="bar"
