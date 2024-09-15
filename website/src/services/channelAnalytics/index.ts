@@ -284,7 +284,9 @@ export async function getChannelAnalytics(
   const topCasts = getTopCasts(casts);
   const contentTypeDistribution = getContentTypeDistribution(casts);
   const mostActiveHours = getMostActiveHours(casts);
-  const growthTrend = calculateGrowthTrend(followers);
+  const growthTrend = calculateGrowthTrend(
+    followers as { lastActionTimestamp: string }[]
+  );
 
   return {
     channel: channelInfo,
@@ -462,12 +464,12 @@ function getMostActiveHours(
 }
 
 function calculateGrowthTrend(
-  followers: any[]
+  followers: { lastActionTimestamp: string }[]
 ): { date: string; followerCount: number }[] {
   const sortedFollowers = followers.sort(
     (a, b) =>
-      new Date(a.lastActionTimestamp).getTime() -
-      new Date(b.lastActionTimestamp).getTime()
+      new Date(a?.lastActionTimestamp).getTime() -
+      new Date(b?.lastActionTimestamp).getTime()
   );
 
   let followerCount = 0;
