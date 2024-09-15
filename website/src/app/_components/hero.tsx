@@ -23,8 +23,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary to-secondary">
-      <div className="container mx-auto px-4 relative z-10 text-center text-white">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary to-secondary dark:from-background dark:to-card">
+      <div className="container mx-auto px-4 relative z-10 text-center text-primary-foreground dark:text-foreground">
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,9 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           Unlock the Power of{" "}
-          <span className="text-accent">Farcaster Analytics</span>
+          <span className="text-accent dark:text-accent">
+            Farcaster Analytics
+          </span>
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
@@ -51,7 +53,7 @@ export default function Hero() {
         >
           <Button
             size="lg"
-            className="bg-accent text-primary hover:bg-accent/90"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 dark:bg-accent dark:text-accent-foreground dark:hover:bg-accent/90"
             onClick={handleOpenLoginModal}
           >
             Get Started
@@ -59,7 +61,8 @@ export default function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="text-white border-white hover:bg-white/20"
+            disabled
+            className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/20 dark:text-foreground dark:border-foreground dark:hover:bg-foreground/20"
           >
             Watch Demo
           </Button>
@@ -69,6 +72,7 @@ export default function Hero() {
     </section>
   );
 }
+
 function Stats() {
   const [stats, setStats] = useState({
     users: 0,
@@ -113,9 +117,11 @@ function Stats() {
         },
       ].map((stat, index) => (
         <div key={index} className="flex flex-col items-center">
-          <stat.icon className="w-12 h-12 mb-4 text-accent" />
+          <stat.icon className="w-12 h-12 mb-4 text-accent dark:text-accent-foreground" />
           <h3 className="text-4xl font-bold mb-2">{stat.value}</h3>
-          <p className="text-lg text-white/80">{stat.label}</p>
+          <p className="text-lg text-primary-foreground/80 dark:text-foreground/80">
+            {stat.label}
+          </p>
         </div>
       ))}
     </motion.div>

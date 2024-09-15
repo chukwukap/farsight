@@ -235,67 +235,39 @@ const GET_CHANNEL_INFO = `
 }
   `;
 
-// const GET_ALL_CHANNELS = `query FetchAllWarpcastChannels {
-//   FarcasterChannels(input: {blockchain: ALL, limit: 50}) {
-//     FarcasterChannel {
-//       id
-//       dappName
-//       dappSlug
-//       channelId
-//       name
-//       url
-//       description
-//       imageUrl
-//       leadIds
-//       leadProfiles {
-//         id
-//         profileName
-//         profileBio
-//         profileDisplayName
-//         profileImage
-//         profileUrl
-//         profileTokenAddress
-//       }
-//       moderatorIds
-//       moderatorProfiles {
-//         id
-//         profileName
-//         profileBio
-//         profileDisplayName
-//         profileImage
-//         profileUrl
-//         profileHandle
-//       }
-//       isModerationEnabled
-//       createdAtTimestamp
-//       followerCount
-//       participants {
-//         id
-//         dappName
-//         dappSlug
-//         channelId
-//         channelName
-//         participantId
-//         participant {
-//           id
-//           profileName
-//           profileBio
-//           profileDisplayName
-//           profileImage
-//           profileUrl
-//           farcasterScore {
-//             farRank
-//           }
-//         }
-//         lastActionTimestamp
-//         lastRepliedTimestamp
-//         lastCastedTimestamp
-//         lastFollowedTimestamp
-//         channelActions
-//       }
-//     }
-//   }
-// }`;
+const GET_TOP_FARCASTER_CHANNELS = `
+  query GetTopWarpcastChannels($limit: Int!) {
+    FarcasterChannels(
+      input: {
+        blockchain: ALL,
+        order: [{ followerCount: DESC }],
+        limit: $limit
+      }
+    ) {
+      FarcasterChannel {
+        id
+        dappName
+        dappSlug
+        channelId
+        name
+        url
+        description
+        imageUrl
+        followerCount
+        createdAtTimestamp
+        leadIds
+        moderatorIds
+        isModerationEnabled
+        participants {
+          participantId
+          participant {
+            profileName
+          }
+        }
+      }
+    }
+  }
+`;
 
 export async function getChannelAnalytics(
   channelId: string
@@ -343,6 +315,68 @@ async function getAllChannelFollowers(channelId: string): Promise<unknown[]> {
     limit,
   });
   return response.FarcasterChannelParticipants.FarcasterChannelParticipant;
+}
+
+export async function getTopChannels(
+  limit: number = 50
+): Promise<FarcasterChannel[]> {
+  const response = await queryAirstack(GET_TOP_FARCASTER_CHANNELS, { limit });
+  return response.FarcasterChannels.FarcasterChannel;
+}
+
+export async function searchChannels(
+  query: string
+): Promise<FarcasterChannel[]> {
+  const SEARCH_CHANNELS = `
+  query SearchFarcasterChannels($query: String!) {
+      FarcasterChannels(
+        input: {
+          filter: { name: { _regex: $query } },
+          blockchain: ALL,
+          limit: 15
+        }
+      ) {
+        FarcasterChannel {
+          id
+          channelId
+          name
+          description
+          imageUrl
+          followerCount
+        }
+      }
+    }
+`;
+
+  const variables = {
+    query: `(?i)${query}`, // Case-insensitive regex
+  };
+
+  try {
+    const response = await queryAirstack(SEARCH_CHANNELS, variables);
+    if (
+      response &&
+      response.FarcasterChannels &&
+      response.FarcasterChannels.FarcasterChannel
+    ) {
+      return response.FarcasterChannels.FarcasterChannel.map(
+        (channel: FarcasterChannel) => ({
+          id: channel.id,
+          channelId: channel.channelId,
+          name: channel.name,
+          description: channel.description,
+          imageUrl: channel.imageUrl,
+          followerCount: channel.followerCount,
+        })
+      );
+    } else {
+      console.warn("Unexpected API response structure:", response);
+      return [];
+    }
+  } catch (error) {
+    console.error("Error searching Farcaster channels:", error);
+    return [];
+  }
 }
 
 function calculateCastsPerDay(

@@ -1,3 +1,4 @@
+"use server";
 import { init, fetchQuery } from "@airstack/node";
 
 if (!process.env.AIRSTACK_API_KEY) {
@@ -12,6 +13,7 @@ export async function queryAirstack(
 ) {
   try {
     const { data, error } = await fetchQuery(query, variables);
+    console.log("data", data);
     if (error) {
       console.log("There was an error in queryAirstack", error);
       throw new Error(error.message);
@@ -21,27 +23,4 @@ export async function queryAirstack(
     console.error("Airstack API error:", error);
     throw error;
   }
-}
-
-export async function getFarcasterChannel(channelId: string) {
-  const query = `
-    query {
-      FarcasterChannels(input: {filter: {channelId: {_eq: "${channelId}"}}}) {
-        FarcasterChannel {
-          channelId
-          dappName
-          createdAtTimestamp
-          dappSlug
-          description
-          followerCount
-          name
-          url
-          imageUrl
-        }   
-      }
-    }
-  `;
-
-  const data = await queryAirstack(query);
-  return data.FarcasterChannels.FarcasterChannel;
 }

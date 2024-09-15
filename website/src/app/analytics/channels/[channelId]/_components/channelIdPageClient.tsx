@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { ChannelAnalytics } from "@/types/channel";
 import { LineChart, BarChart, PieChart } from "@/components/charts";
 import { motion } from "framer-motion";
-import { ArrowPathIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function ChannelIdPageClient({
   channelId,
@@ -49,17 +51,25 @@ export default function ChannelIdPageClient({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold mb-8 text-center text-foreground">
-          {analytics.channel.name} Analytics
-        </h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-foreground">
+            {analytics?.channel.name} Analytics
+          </h1>
+          <Link href="/channels">
+            <Button variant="outline" className="flex items-center">
+              <ArrowLeftIcon className="w-4 h-4 mr-2" />
+              Back to Channels
+            </Button>
+          </Link>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <StatCard title="Followers" value={analytics.channel.followerCount} />
           <StatCard
             title="Participants"
-            value={analytics.channel.participantsCount}
+            value={analytics.channel.participants.length}
           />
-          <StatCard title="Total Casts" value={analytics.channel.castsCount} />
+          <StatCard title="Total Casts" value={analytics?.castsPerDay.length} />
           <StatCard
             title="Engagement Rate"
             value={`${analytics.engagementRate?.toFixed(2)}%`}

@@ -1,12 +1,23 @@
 export interface FarcasterChannel {
+  id: string;
+  dappName: string;
+  dappSlug: string;
   channelId: string;
   name: string;
+  url: string;
   description: string;
   imageUrl: string;
-  createdAtTimestamp: string;
   followerCount: number;
-  participantsCount: number;
-  castsCount: number;
+  createdAtTimestamp: string;
+  leadIds: string[];
+  moderatorIds: string[];
+  isModerationEnabled: boolean;
+  participants: {
+    participantId: string;
+    participant: {
+      profileName: string;
+    };
+  }[];
 }
 
 export interface FarcasterCast {

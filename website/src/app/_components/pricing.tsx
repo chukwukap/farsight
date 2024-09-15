@@ -1,11 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 const plans = [
   {
     name: "Starter",
-    price: "$9",
+    monthlyPrice: "Free",
+    yearlyPrice: "Free",
     features: [
       "Basic analytics",
       "Up to 1,000 followers",
@@ -16,7 +22,8 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "$29",
+    monthlyPrice: "$29",
+    yearlyPrice: "$290",
     features: [
       "Advanced analytics",
       "Unlimited followers",
@@ -28,7 +35,8 @@ const plans = [
   },
   {
     name: "Enterprise",
-    price: "Custom",
+    monthlyPrice: "Custom",
+    yearlyPrice: "Custom",
     features: [
       "Custom analytics",
       "Dedicated account manager",
@@ -41,18 +49,39 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const [isYearly, setIsYearly] = useState(false);
+
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background" id="pricing">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl font-bold text-center mb-8">
           Choose Your Plan
         </h2>
+        <p className="text-xl text-center text-muted-foreground mb-12">
+          Unlock the full potential of your Farcaster presence with our flexible
+          pricing options.
+        </p>
+        <div className="flex justify-center items-center mb-12">
+          <Label htmlFor="pricing-toggle" className="mr-4">
+            Monthly
+          </Label>
+          <Switch
+            id="pricing-toggle"
+            checked={isYearly}
+            onCheckedChange={setIsYearly}
+          />
+          <Label htmlFor="pricing-toggle" className="ml-4">
+            Yearly (Save 20%)
+          </Label>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              className={`bg-card p-6 rounded-lg shadow-lg ${
-                plan.highlighted ? "border-2 border-primary" : ""
+              className={`bg-card p-8 rounded-lg shadow-lg ${
+                plan.highlighted
+                  ? "border-2 border-primary ring-4 ring-primary ring-opacity-20"
+                  : ""
               }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -60,15 +89,15 @@ export default function Pricing() {
             >
               <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
               <p className="text-4xl font-bold mb-6">
-                {plan.price}
+                {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                 <span className="text-lg font-normal text-muted-foreground">
-                  /month
+                  /{isYearly ? "year" : "month"}
                 </span>
               </p>
-              <ul className="mb-6 space-y-2">
+              <ul className="mb-8 space-y-4">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center">
-                    <CheckIcon className="w-5 h-5 text-green-500 mr-2" />
+                    <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -76,8 +105,9 @@ export default function Pricing() {
               <Button
                 className="w-full"
                 variant={plan.highlighted ? "default" : "outline"}
+                size="lg"
               >
-                Choose Plan
+                {plan.name === "Enterprise" ? "Contact Sales" : "Choose Plan"}
               </Button>
             </motion.div>
           ))}

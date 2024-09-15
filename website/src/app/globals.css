@@ -29,6 +29,21 @@
     --chart-4: 0 0% 20%;
     --chart-5: 0 0% 96%;
     --radius: 0.5rem;
+
+    /* Chart Colors - Light Mode */
+    --chart-background: 0 0% 100%;
+    --chart-text: 215 25% 27%;
+    --chart-grid: 220 13% 91%;
+    --chart-primary: 201 96% 32%;
+    --chart-secondary: 215 100% 50%;
+    --chart-tertiary: 275 80% 45%;
+    --chart-quaternary: 35 100% 50%;
+    --chart-quinary: 150 60% 45%;
+    --chart-success: 142 76% 36%;
+    --chart-warning: 35 100% 50%;
+    --chart-danger: 0 84% 60%;
+    --chart-info: 201 96% 32%;
+    --chart-neutral: 215 25% 27%;
   }
 
   .dark {
@@ -56,6 +71,21 @@
     --chart-3: 51 100% 50%;
     --chart-4: 0 0% 96%;
     --chart-5: 0 0% 20%;
+
+    /* Chart Colors - Dark Mode */
+    --chart-background: 215 28% 17%;
+    --chart-text: 220 13% 91%;
+    --chart-grid: 215 25% 27%;
+    --chart-primary: 199 89% 48%;
+    --chart-secondary: 215 100% 60%;
+    --chart-tertiary: 275 80% 65%;
+    --chart-quaternary: 35 100% 60%;
+    --chart-quinary: 150 60% 55%;
+    --chart-success: 142 76% 46%;
+    --chart-warning: 35 100% 60%;
+    --chart-danger: 0 84% 70%;
+    --chart-info: 199 89% 48%;
+    --chart-neutral: 220 13% 91%;
   }
 }
 
@@ -86,38 +116,4 @@ h6 {
 
 code {
   font-family: "Fira Code", monospace;
-}
-
-.channel-analytics {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.analytics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.analytics-card {
-  background-color: var(--background-secondary);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.analytics-card h2 {
-  color: var(--text-primary);
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.2em;
-}
-
-.analytics-card ul {
-  padding-left: 20px;
-  color: var(--text-secondary);
-}
-
-.analytics-card li {
-  margin-bottom: 10px;
 }
