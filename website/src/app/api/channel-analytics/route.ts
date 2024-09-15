@@ -1,10 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { getChannelAnalytics } from "@/services/channelAnalytics";
 
-export async function GET(request: Request) {
+export const dynamic = "error"; // This will cause an error if the route ends up being dynamic
+
+export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const channelId = searchParams.get("channelId");
+    const channelId = request.nextUrl.searchParams.get("channelId");
     if (!channelId) {
       return NextResponse.json(
         { error: "Channel ID is required" },
